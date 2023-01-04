@@ -18,7 +18,6 @@ import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn';
     }
     const darkMode=()=>{
       document.body.setAttribute('arco-theme', 'dark')
-  
     }
     const whiteMode=()=>{
       // 恢复亮色主题
@@ -26,33 +25,49 @@ import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn';
     }
 </script>
 <template>
-   <a-space>
-    <a-button type="primary" @click="darkMode">黑暗模式</a-button>
-    <a-button type="primary" @click="whiteMode" >亮色模式</a-button>
-    <a-button type="primary" loading>Primary</a-button>
-    <a-button loading>Default</a-button>
-    <a-button type="dashed" loading>Dashed</a-button>
-    <a-button type="primary" @click="handleClick3">取消加载框</a-button>
-    <a-button type="primary" :loading="loading1" @click="handleClick1">Click Me</a-button>
-    <a-button type="primary" :loading="loading2" @click="handleClick2">
-      <template #icon>
-        <icon-plus />
-      </template>
-      Click Me
-    </a-button>
-  </a-space>
+   <div class="layout-demo">
+    <a-layout style="height:100vh;">
+      <a-layout-header class="header">Header</a-layout-header>
+      <a-layout-content>
+        <a-space>
+          <a-button type="primary" @click="darkMode">黑暗模式</a-button>
+          <a-button type="primary" @click="whiteMode" >亮色模式</a-button>
+          <a-button type="primary" loading>Primary</a-button>
+          <a-button loading>Default</a-button>
+          <a-button type="dashed" loading>Dashed</a-button>
+          <a-button type="primary" @click="handleClick3">取消加载框</a-button>
+          <a-button type="primary" :loading="loading1" @click="handleClick1">Click Me</a-button>
+          <a-button type="primary" :loading="loading2" @click="handleClick2">
+            <template #icon>
+              <icon-plus />
+            </template>
+            Click Me
+          </a-button>
+        </a-space>
+      </a-layout-content>
+      <a-layout-footer  class="footer" >Footer</a-layout-footer>
+    </a-layout>
+  </div>
+  
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+
+.layout-demo{
+
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.header{
+  height:60px;
+  line-height: 60px;
+  text-align: center;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.footer{
+  height:60px;
+  line-height: 60px;
+  text-align: center;
+  
 }
+
 </style>
