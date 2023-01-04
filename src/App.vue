@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import axios from 'axios';
 import HelloWorld from './components/HelloWorld.vue'
 import { IconPlus } from '@arco-design/web-vue/es/icon';
 import { Icon } from '@arco-design/web-vue';
@@ -23,6 +24,13 @@ import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn';
       loading2.value = !loading2.value
     }
     const changeThemeMode=()=>{
+      axios.get("http://127.0.0.1:8999/main.html").then(function (response) {
+                    if (response.status === 200) {
+                        console.log(response.data);
+                    }
+                }).catch(function (error) {
+                    console.log(error);
+                });
       if(theme.value === "dark"){
         theme.value="light";
         document.body.removeAttribute('arco-theme');
@@ -30,13 +38,13 @@ import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn';
         document.getElementById("backgroundMode").style.backgroundColor='white';
       }else{
         theme.value = "dark";
-       
         document.body.setAttribute('arco-theme', 'dark');
         document.getElementById("backgroundMode").style.backgroundColor='#17171A';
         document.getElementById("fullScreenMode").style.backgroundColor='#17171A';
       }
     }
     const darkMode=()=>{
+   
       document.body.setAttribute('arco-theme', 'dark')
     }
     const whiteMode=()=>{
