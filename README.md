@@ -1,2 +1,3 @@
-# arco-design-vue-demo
-Arco Design vue demo
+```
+npm create vite@latest arco-design-vue-demo -- --template vue
+```
