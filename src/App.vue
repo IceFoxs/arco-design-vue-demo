@@ -63,9 +63,10 @@ import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn';
           </a>
        </a-space>
         <a-space style="width:100%;flex-direction: row-reverse;margin-top:5px;">
-         
-            <div class="arco-space-item"><div class="arco-avatar arco-avatar-circle ac-navbar-profile-avatar" style="width: 32px; height: 32px; font-size: 16px;"><span class="arco-avatar-image"><img alt="yuntao_zhao@163.com" src="https://avatars.githubusercontent.com/u/26451038?v=4"></span></div></div>
         
+           <a href="https://github.com/IceFoxs" style="margin-top:15px;">
+             <img alt="yuntao_zhao@163.com" style="width:32px;height:32px; border-radius: var(--border-radius-circle);" src="https://avatars.githubusercontent.com/u/26451038?v=4">
+           </a>
            <a-button id="fullScreenMode"
               @click="toggleFullScreen"
             >
